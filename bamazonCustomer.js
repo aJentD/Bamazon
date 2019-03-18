@@ -103,8 +103,16 @@ function selectProduct() {
               ],
               function(err, results) {}
             );
+            var subTotal = results[0].price * answer.quantity;
+            var tax = 0.06;
+            var total = subTotal + subTotal * tax;
 
-            var total = results[0].price * answer.quantity;
+            console.log("Your invoice is :");
+            console.log("\n+++++++++++++++");
+            console.log("\n Subtotal: $" + subTotal.toFixed(2));
+            console.log("\n Tax: $" + tax.toFixed(2));
+            console.log("\n Total: $" + total.toFixed(2));
+            console.log("\n ++++++++++++++++++++++");
             console.log(
               "\n Purchase Successfull! Your total is $" +
                 total.toFixed(2) +
